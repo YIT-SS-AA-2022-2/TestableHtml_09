@@ -31,14 +31,14 @@ public class TestableHtml {
         pageData.setContent(buffer.toString());
         return pageData.getHtml();
     }
-
+    //중복되는 구문들을 하나의 메소드로 추출하여 사용
     private static void isIncludeSuiteSetup(boolean includeSuiteSetup, String suiteSetupName, WikiPage wikiPage, String includeSetup) throws Exception {
         if (includeSuiteSetup) {
             WikiPage suiteSetup = PageCrawlerImpl.getInheritedPage(suiteSetupName, wikiPage);
             isSetupNull(suiteSetup, wikiPage, includeSetup);
         }
     }
-
+    //중복되는 구문들을 하나의 메소드로 추출하여 사용
     private static void isSetupNull(WikiPage setup, WikiPage wikiPage, String includeSetup) throws Exception {
         if (setup != null) {
             getPathName(wikiPage, setup, includeSetup);
